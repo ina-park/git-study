@@ -18,7 +18,7 @@ HTML5 생성 엔진
 
 - W3C에서 관리하지 않기 때문에 W3C HTML5 스펙에 WebGL 없음. 그러나 사용률 기준 글로벌 브라우저에서 거의 다 WebGL를 지원한다.
 
-- 그림을 그리는 성능이 캔버스보다 뛰어나고, CPU에게 더 많은 여유를 준다.
+- 그림을 그리는 성능이 캔버스보다 뛰어나고, CPU에게 더 많은 여유를 준다. (속도가 )
 
   비교 : **[Canvas2D](http://hanmomhanda.github.io/WebGL-Study/src/practice/canvas2D-Rect.html)** vs **[WebGL](http://hanmomhanda.github.io/WebGL-Study/src/practice/Shifting-Multiple-Triangles-Opt.html)**
 
