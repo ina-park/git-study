@@ -35,6 +35,10 @@ pixi.js의 examples 페이지에 여러가지 예제가 소개되어 있다.
 - Star warp - sprites
 
   https://pixijs.io/examples/#/demos/star-warp-sprites.js
+  
+- SpriteSheet Animation
+
+  https://pixijs.io/examples/#/basics/spritesheet.js  
 
 - Mouse blending
 
