@@ -31,7 +31,7 @@ HTML5 생성 엔진
 이 라이브러리를 사용해 만든 애니메이션은, WebGL을 자동적으로 사용해 주고 있다.
 
 pixi.js의 examples 페이지에 여러가지 예제가 소개되어 있다.
-http://www.pixijs.com/
+- http://www.pixijs.com/
 
 - Star warp - sprites
 https://pixijs.io/examples/#/demos/star-warp-sprites.js
@@ -42,8 +42,8 @@ https://pixijs.io/examples/#/demos/slots-demo.js
 
 ## <u>2. Pixi.js 설치하기</u>
 
-https://github.com/pixijs/pixi.js
-https://github.com/pixijs/pixi.js/releases
+- https://github.com/pixijs/pixi.js
+- https://github.com/pixijs/pixi.js/releases
 
 [**pixi.js**](https://github.com/pixijs/pixi.js/releases/download/v4.8.3/pixi.js) or [**pixi.min.js**](https://github.com/pixijs/pixi.js/releases/download/v4.8.3/pixi.min.js) 를 다운로드 받아 파일을 로드하면, pixi.js 기능을 이용하는것이 가능해진다.
 
