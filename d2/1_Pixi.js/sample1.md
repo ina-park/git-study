@@ -67,7 +67,7 @@ pixi.js의 examples 페이지에 여러가지 예제가 소개되어 있다.
 - https://github.com/pixijs/pixi.js
 - https://github.com/pixijs/pixi.js/releases
 
-[**pixi.js**](https://github.com/pixijs/pixi.js/releases/download/v4.8.3/pixi.js) or [**pixi.min.js**](https://github.com/pixijs/pixi.js/releases/download/v4.8.3/pixi.min.js) 를 다운로드 받아 파일을 로드하면, pixi.js 기능을 이용하는것이 가능해진다.
+[**pixi.js**](https://github.com/pixijs/pixi.js/releases/download/v4.8.3/pixi.js) or [**pixi.min.js**](https://github.com/pixijs/pixi.js/releases/download/v4.8.3/pixi.min.js) 를 다운로드 받아 파일을 로드하면, pixi.js 기능을 이용하는 것이 가능해진다.
 
 ```
 <script src="pixi.js"></script>
