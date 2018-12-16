@@ -40,6 +40,10 @@ pixi.js의 examples 페이지에 여러가지 예제가 소개되어 있다.
 
   https://pixijs.io/examples/#/filters/filter-mouse.js
 
+- Mouse trail
+
+  https://pixijs.io/examples/#/demos/mouse-trail.js
+
 - Slots demo
 
   https://pixijs.io/examples/#/demos/slots-demo.js
