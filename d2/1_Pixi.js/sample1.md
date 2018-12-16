@@ -31,7 +31,6 @@ HTML5 생성 엔진
 이 라이브러리를 사용해 만든 애니메이션은, WebGL을 자동적으로 사용해 주고 있다.
 
 pixi.js의 examples 페이지에 여러가지 예제가 소개되어 있다.
-- http://www.pixijs.com/
 
 - Star warp - sprites
 https://pixijs.io/examples/#/demos/star-warp-sprites.js
