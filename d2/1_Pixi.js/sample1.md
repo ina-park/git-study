@@ -43,6 +43,16 @@ pixi.js의 examples 페이지에 여러가지 예제가 소개되어 있다.
 - Slots demo
 
   https://pixijs.io/examples/#/demos/slots-demo.js
+  
+아래는 pixi.js를 사용해 만든 사이트 이다.
+
+- Land Lines
+
+  https://lines.chromeexperiments.com/
+  
+- barclayscodeplayground
+
+  http://barclayscodeplayground.co.uk/
 
 ## <u>2. Pixi.js 설치하기</u>
 
