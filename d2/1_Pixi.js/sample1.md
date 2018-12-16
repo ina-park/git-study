@@ -33,11 +33,11 @@ HTML5 생성 엔진
 pixi.js의 examples 페이지에 여러가지 예제가 소개되어 있다.
 http://www.pixijs.com/
 
-*Star warp - sprites
+- Star warp - sprites
 https://pixijs.io/examples/#/demos/star-warp-sprites.js
-*Mouse blending
+- Mouse blending
 https://pixijs.io/examples/#/filters/filter-mouse.js
-*Slots demo
+- Slots demo
 https://pixijs.io/examples/#/demos/slots-demo.js
 
 ## <u>2. Pixi.js 설치하기</u>
