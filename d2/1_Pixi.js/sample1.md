@@ -155,7 +155,7 @@ var renderer = PIXI.autoDetectRenderer(width, height);
 
 PIXI.STAGE() 를 생성한다. 파라미터에 있는것은 배경색이다.
 PIXI.autoDetectRenderer() 를 생성한다.
-지정하고 있는것은, 렌더링이 취급하는 화면영역의 높이, 가로사이즈 이다.
+지정하고 있는것은, 렌더링이 취급하는 화면영역의 가로, 높이 사이즈 이다.
 
 **2. 렌더링의 View를 html의 요소에 추가한다.**
 
