@@ -168,7 +168,7 @@ textobj.position.y = height/2;
 
 먼저 변수 text에 글자를 넣어주고, new PIXI.TextStyle를 생성하여 글자 사이즈랑 색깔등을 지정해 주고, new PIXI.Text(text, style) 를 생성하여 텍스트의 위치와 값을 정해주었다. anchor와 position 프로퍼티로 객체의 위치를 지정해 주고, blur 효과도 추가했다.
 
-![](C:\Users\Yoon\Desktop\작업\0_study\d2\1_Pixi.js\작업\img1.png)
+![https://raw.githubusercontent.com/ina-park/study/master/d2/1_Pixi.js/local/img1.png]()
 
 **3. 애니메이션 오브젝트를 스테이지에 싣는다**.
 
