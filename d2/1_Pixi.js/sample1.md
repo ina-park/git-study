@@ -1,6 +1,6 @@
 
 
-![](http://www.pixijs.com/img/pixijs-v4-logo.png)
+![](https://camo.githubusercontent.com/eae4496331dc8533db7c7ff8879c0d6a12da2282/687474703a2f2f706978696a732e646f776e6c6f61642f706978696a732d62616e6e65722e706e67)
 
 # [ 1 ] Pixi.js 로 텍스트 움직여보기
 
@@ -33,11 +33,16 @@ HTML5 생성 엔진
 pixi.js의 examples 페이지에 여러가지 예제가 소개되어 있다.
 
 - Star warp - sprites
-https://pixijs.io/examples/#/demos/star-warp-sprites.js
+
+  https://pixijs.io/examples/#/demos/star-warp-sprites.js
+
 - Mouse blending
-https://pixijs.io/examples/#/filters/filter-mouse.js
+
+  https://pixijs.io/examples/#/filters/filter-mouse.js
+
 - Slots demo
-https://pixijs.io/examples/#/demos/slots-demo.js
+
+  https://pixijs.io/examples/#/demos/slots-demo.js
 
 ## <u>2. Pixi.js 설치하기</u>
 
