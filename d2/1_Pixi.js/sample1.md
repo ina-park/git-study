@@ -207,7 +207,7 @@ function animate(){
     blurFilter.blur = 20 * (blurAmount); //블러효과			
     textobj.rotation += 0.03; //텍스트 회전
     renderer.render(stage); //그림을 그린다
-    requestAnimationFrame(animate); // 다음 타이밍에서 애니메이션을 부른다
+    requestAnimationFrame(animate); //다음 타이밍에서 애니메이션을 부른다
 }
 ```
 
