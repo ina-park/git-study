@@ -191,7 +191,7 @@ textobj.position.y = height/2;
 **3. 애니메이션 오브젝트를 스테이지에 싣는다**.
 
 ```
-stage.addChild(textobj);
+stage.addChilde(textobj);
 ```
 
 오브젝트 스테이지 등록은 스테이지 오브젝트의 addChilde()메서드로 행한다.
