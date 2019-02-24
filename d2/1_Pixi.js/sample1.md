@@ -222,7 +222,7 @@ requestAnimationFrame(animate);
 
 ## 링크
 
-- https://code.d2.co.kr/inapark/study/1_Pixi.js/local/sample
+- https://code.d2.co.kr/inapark/study/1_Pixi.js/local/sample1
 
 
 
