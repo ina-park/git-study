@@ -52,6 +52,7 @@ pixi.js의 examples 페이지에 여러가지 예제가 소개되어 있다.
 
   https://pixijs.io/examples/#/demos/slots-demo.js
   
+
 아래는 pixi.js를 사용해 만든 사이트 이다.
 
 - Land Lines
@@ -191,7 +192,7 @@ textobj.position.y = height/2;
 **3. 애니메이션 오브젝트를 스테이지에 싣는다**.
 
 ```
-stage.addChilde(textobj);
+stage.addChild(textobj);
 ```
 
 오브젝트 스테이지 등록은 스테이지 오브젝트의 addChilde()메서드로 행한다.
@@ -216,6 +217,12 @@ function animate(){
 ```
 requestAnimationFrame(animate);	
 ```
+
+
+
+## 링크
+
+- https://code.d2.co.kr/inapark/study/1_Pixi.js/local/sample
 
 
 
