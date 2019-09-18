@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="utf-8" />
+
+	<title>Test</title>
+
+	<!-- INITIAL SCRIPTS -->
+    <script src="../../../00_common/js/jquery-3.2.1.min.js"></script>
+
+
+    <style>
+        * {margin:0;padding:0;}
+        .slider {
+            /* position: absolute;
+            top: 0;
+            left: 0; */
+            /* width: 1000px;
+            height: 500px; */
+
+        }
+        .slider .slider-view {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .slider-view .slider-track {
+            /* absolute 잇어야 움직임 */
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            /* 아이템 갯수에 따라 width크기 동적으로 변경됨 */
+            /* 500*2 */
+            width: 1000px;
+            height: 500px;
+        }
+
+        .slider-view  .slider-track .item {
+            /* display: none; */
+
+            float: left;
+            width: 500px;
+            height: 500px;
+        }
+        .slider-view  .slider-track .item.active {
+            /* display: block; */
+        }
+
+        .slider-view .slider-track .item:nth-child(1) {
+            background-color: red;
+        }
+        .slider-view .slider-track .item:nth-child(2) {
+            background-color: blue;
+        }
+        .slider-view .slider-track .item:nth-child(3) {
+            background-color: yellow;
+        }
+        .slider-nav li {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+        <div class="slider">
+            <div class="slider-view">
+                    <div class="slider-track">
+                        <div class="item">
+                            <button id="btn-next">next</button>
+                        </div>
+                        <div class="item">
+                            <button id="btn-prev">prev</button>
+                        </div>
+                        <div class="item">
+                                <button id="btn-prev">prev</button>
+                        </div>                        
+                    </div>
+            </div>
+            <div class="slider-nav">
+                <ul id="nav-list">
+                    <li><a href="#" rel="1">1</a></li>
+                    <li><a href="#" rel="2">2</a></li>
+                    <li><a href="#" rel="3">3</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            // 아이템 하나의 크기 showDuration
+            var itemWidth = 500;
+            var showDuration = 500;
+            //  움직일  슬라이더  
+            var $sliderTrack;
+            // 아이템 전체 개수
+            var nItemLength = 0;
+            // 현재 화면에 보이는 아이템의 인덱스 값
+            var nCurrentItemIndex = 0;
+
+            // 슬라이더 아이템
+            var $sliderItem;
+            // 슬라이더 네비
+            var $sliderNav;
+
+
+            $(document).ready(function(){
+                initSlider();
+                initEventListener();
+            });
+
+            // 슬라이더 초기화
+            function initSlider() {
+                // 슬라이더 트렉 영역의 크기를 동적으로 늘린다
+                $sliderTrack = $('.slider-track');
+                nItemLength = $sliderTrack.children('.item').length;
+
+                // 슬라이더 트렉의 너비를 (배너 하나의 크기 * 배너 개수)로 설정
+                $sliderTrack.width(itemWidth * nItemLength);
+
+                // 슬라이더 아이템
+                $sliderItem = $sliderTrack.find('.item');
+                $sliderItem.eq(0).addClass('active');
+
+
+                // 슬라이더 네비
+                $sliderNav = $('#nav-list li a');
+                // 네비 위치값을 0번쨰로 초기화
+                showItemNavAt(0);
+            }
+
+            // 이벤트 처리
+            function initEventListener() {
+                // 이전  아이템 보이기
+                $('#btn-prev').bind('click', function() {
+                    btnPrev();
+                });
+                // 다음 아이템 보이기
+                $('#btn-next').bind('click', function() {
+                    btnNext();
+                });
+                // 슬라이더 네비
+                $sliderNav.bind('click', function() {
+                    var nIndex = $sliderNav.index(this);
+                    showItemAt(nIndex);
+                });
+            }
+
+
+
+            // 이전 아이템 보이기
+            function btnPrev() {
+                // 이동할 이전 아이템의 인덱스 값 구하기
+                var nIndex = this.nCurrentItemIndex - 1;
+                // 이전 내용이 없는 경우 마지막 아이템의 인덱스 값으로 설정
+                if (nIndex < 0) {
+                    nIndex = this.nItemLength - 1;
+                }
+                // n번째 아이템 보이기
+                this.showItemAt(nIndex);
+
+               // console.log('btnPrev-index', nIndex)
+
+            }
+
+            // 다음 아이템 보이기
+            function btnNext() {
+
+                // 이동할 다음 배너의 인덱스 값 구하기
+                var nIndex = this.nCurrentItemIndex + 1;
+                
+                // 다음 내용이 없는 경우 첫 번쨰 아이템 인덱스 값으로 수정
+                if (nIndex >= nItemLength) {
+                    nIndex = 0;
+                }
+
+                // n 번째 아이템 보이기
+                this.showItemAt(nIndex);
+
+                //console.log('btnNext-index', nIndex)
+            }
+
+            
+
+            // index에 해당하는 아이템 보이기
+            function showItemAt(nIndex) {
+
+
+                if (nIndex != this.currentItemIndx) {
+                    // n번째 아이템 위치 값 구하기
+                    
+                    var nPosition = -itemWidth * nIndex;
+
+                    console.log('nPosition',nPosition)
+
+                    // 슬라이더 네비의 위치값을 업데이트
+                    this.showItemNavAt(nIndex);
+
+                    // 스라이더 시작
+                    $sliderTrack.stop();
+                    $sliderTrack.animate({
+                            left: nPosition
+                        }, showDuration,
+                    );
+
+                    // 현재 아이템의 인덱스 업데이트
+                    this.nCurrentItemIndex = nIndex;
+                }
+
+                this.$sliderItem.removeClass('active');
+                this.$sliderItem.eq(nIndex).addClass('active');                
+
+                
+            }
+
+            // 슬라이더 네비의 위치값을 업데이트
+            function showItemNavAt(nIndex) {
+               // console.log($sliderNav.eq(this.nCurrentItemIndex))
+               // console.log('nav-index', nIndex)
+
+                this.$sliderNav.eq(this.nCurrentItemIndex).removeClass('active');
+                this.$sliderNav.eq(nIndex).addClass('active');
+
+                
+            }
+
+
+        </script>
+
+</body>
+
+

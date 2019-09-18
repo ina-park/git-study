@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="utf-8" />
+
+	<title>Test</title>
+
+	<!-- INITIAL SCRIPTS -->
+	<script src="../../../00_common/js/jquery-3.2.1.min.js"></script>
+</head>
+
+
+<script type="text/javascript">
+	for (var i = 2; i <= 9; i++) {
+		document.write('<div>');
+		document.write('<h3>' + i + '단</h3>');
+		
+		for (var j = 1; j <= 9; j++) {
+			document.write(i + 'X' + j + '=' + i * j + '<br>');
+		}
+	}
+	
+	
+	document.wirte('</div>');
+	
+</script>

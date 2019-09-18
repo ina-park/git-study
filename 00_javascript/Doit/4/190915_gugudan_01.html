@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="utf-8" />
+
+	<title>Test</title>
+
+	<!-- INITIAL SCRIPTS -->
+	<script src="../../../00_common/js/jquery-3.2.1.min.js"></script>
+</head>
+
+<style type="text/css">
+	.box {
+		display:inline-block;
+		width: 300px;
+		height: auto;
+		margin: 0 20px;
+	}
+</style>
+
+<div id="getList">
+
+</div>
+
+
+<script type="text/javascript">
+	/* 연습 */
+
+	var i; // 바깥쪽 변수
+	var j; // 안쪽 변수
+	var sum; // 합산
+	var htmlStr = ''; // 리스트 생성
+	
+	
+	for (var i = 2; i <= 9; i++) {
+		htmlStr += '<div class="box">';
+		htmlStr += 		'<strong>' + i + '단</strong>';
+	
+		for (var j = 1; j <= 9; j++) {
+			//$('p').html(i * j = sum);
+			var sum = i * j;
+			htmlStr += '<p>' + i + ' X ' + j + ' = ' + sum + '</p>';
+		}	
+	
+		htmlStr += '</div>';	
+	}
+	
+	
+	$('#getList').html(htmlStr);
+
+	
+</script>

@@ -1,0 +1,15 @@
+<script type="text/javascript">
+	// *문자가 30개 표시되는 줄을 5개 만듬 (효율적)
+	
+	// 바깥쪽 <- 조건식이 false가 될때까지 반복
+	for (var k = 0; k < 5; k++) {	
+		console.log(k)
+	
+		// 안쪽
+		for (var i = 0; i < 30; i++) {
+			document.write('*');
+		}
+		// 줄바꿈
+		document.write('<br>');
+	}
+</script>
