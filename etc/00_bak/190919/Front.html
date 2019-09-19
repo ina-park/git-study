@@ -1,0 +1,426 @@
+<style>
+		/**
+			* 페이지안에서 css 사용 예제 입니다.
+			* 1. 공통스타일인 경우는 product.css또는 common.css에 작성
+			* 2. 페이지 내에서만 사용하는 스타일인 경우는 아래와 같이 작성
+		*/
+	
+		#replaced-pageName {
+			margin: 0;
+			width: 1180px;/*// product mainWidth*//*풀페이지인경우 리사이즈에 패널구성이 변함을 방지하기위해 */
+		}
+		#replaced-pageName #dlpo {
+			background-color: #ebeff5;
+		}
+	
+	
+		#replaced-pageName #step-container {
+			position: relative;
+			height: 512px;
+		}
+		#replaced-pageName .step-track {
+			position: absolute;
+			top: 0;
+			left: 0;
+	
+			/* 472*2 */		
+			width: 944px;
+			height: 512px;			
+		}
+		#replaced-pageName .step-slide {
+			float:left;
+			width: 472px;
+			height: 512px;
+		}
+	
+		/* #replaced-pageName .step-slide .ne-section {
+			display:none;
+		}
+		#replaced-pageName .step-slide.active .ne-section {
+			display:block;
+		} */
+
+		#replaced-pageName .step-slide .ne-section {
+			display:block;
+		}
+		#replaced-pageName .step-slide.end .ne-section {
+			display:none;
+		}		
+	
+		#replaced-pageName .ne-section {
+			padding: 55px 40px 70px;
+			min-height: auto;
+		}
+		#replaced-pageName #step01 .ne-section {
+			padding: 110px 40px 70px;
+		}	
+		#replaced-pageName .ne-section.box {
+			padding-top: 0;
+		}	
+	
+		#replaced-pageName .input-step {
+			padding-right: 80px;
+		}
+	
+		/* prod-type */
+		#replaced-pageName .btn-group-vertical {
+			overflow:hidden;
+		}
+		#replaced-pageName .btn-group-vertical .btn-radio-block {
+			position: relative;
+			float: left;
+			width: 50%;
+			height: 200px;
+			margin: 0;
+			padding: 20px 15px;
+			border:0;
+			border-radius: 0;
+			background-repeat:no-repeat;
+			background-position:center 50px;
+		}
+		#replaced-pageName .btn-radio-block + .btn-radio-block{
+			margin-left: -1px;
+		}
+		#replaced-pageName .btn-group-vertical .type-dog {
+			background-image: url('./image/img-pet-dog.png');
+		}
+		#replaced-pageName .btn-group-vertical .type-cat {
+			background-image: url('./image/img-pet-cat.png');
+		}
+		#replaced-pageName .btn-group-vertical .btn-radio-block:after {
+			content: '';
+			border: 1px solid #a1adb7;
+			position: absolute;
+			top: 0;
+			left: 0;		
+			right: 0;
+			bottom: 0;
+		}
+		#replaced-pageName .btn-radio-block label{
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background: none !important;
+			text-align: center;
+			font-size: 20px;
+			font-weight: 500;
+			padding-top: 137px;
+			color: #666;
+		}
+		#replaced-pageName .btn-radio-block.active label{
+			color: #000;
+		}
+		#replaced-pageName .btn-radio-block label:before{
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			margin: 0 auto;
+			width: 19px;
+			height: 19px;
+			background: url('/ria/common/image/sprites-sfd-open.png?_=20180322112631') no-repeat 0 -42px;
+			background-size: 100px auto;
+			-moz-transition: all 0.2s ease;
+			-o-transition: all 0.2s ease;
+			-webkit-transition: all 0.2s ease;
+			transition: all 0.2s ease;		
+		}
+		#replaced-pageName .btn-radio-block.active label:before{
+			content: ' ';
+			background-position: 0 -63px;
+		}
+	
+		.ie.ie8 #replaced-pageName .btn-radio-block label:before{
+			background-image: url('/ria/common/image/sprites-sfd-open-ie8.png?_=20180322112631');
+		}
+		
+		/* active */
+		#replaced-pageName .btn-radio-block.active {
+			border: 0 !important;
+		}	
+		#replaced-pageName .btn-radio-block.active:after {
+			border: 2px solid #42475D;
+		}
+	
+		/* button */
+		#replaced-pageName .ne-bts-nextprev {
+			position: relative;
+			width: 100%;
+			margin: 50px 0 0;
+			padding: 0;
+		}
+		#replaced-pageName .ne-bts-nextprev .history {
+			min-width: 125px;
+		}
+		#replaced-pageName .ne-bts-nextprev .btn-next-step {
+			min-width: 260px;
+			min-height: 50px;
+			padding: 12px 30px;
+			letter-spacing: -1px;
+		}
+		#replaced-pageName .ne-bts-nextprev .btn-next-step span {
+			float:right;
+			margin: 0;
+		}
+	
+		/* bullet */
+		#replaced-pageName .bullet-arrow02.cursor-pointer {
+			display:inline-block;
+		}
+		#replaced-pageName .bullet-arrow02 .sfd-icon-right-circle {
+			margin-left:3px;
+		}
+		#replaced-pageName .bullet-arrow02 .sfd-icon-right-circle:before {
+			font-size:15px;
+		}	
+	
+		/* box */
+		#replaced-pageName .ne-section.box .ne-line-box {
+			padding: 20px 0 0 0;
+		}	
+		#replaced-pageName .ne-box button {
+			display:block;
+			float:left;
+			width:194px;
+			margin:0;
+		}	
+		#replaced-pageName .ne-box button:first-child {
+			margin:0 4px 0 0;
+		}
+		#replaced-pageName .ne-box .ne-bt3 {
+			padding: 0;
+			min-height: 40px;
+			font-size: 13px;
+			font-weight: 300;
+			line-height: 16px;
+			letter-spacing: -0.5px;
+		}	
+		#replaced-pageName .ne-line-box .bullet-arrow02:first-child {
+			margin:0;
+		}
+		#replaced-pageName .ne-line-box .bullet-arrow02 {
+			margin:7px 0 0;
+		}	
+		#replaced-pageName .ne-line-box .list-name {
+			width: 170px;
+		}	
+		#replaced-pageName .ne-line-box .list-name span {
+			text-align: left;
+			font-size: 15px;
+			color: #000;
+			font-weight: 500;		
+		}
+	
+		/* form */
+		#replaced-pageName .ne-form-type1 .form-group {
+			display:inline-block;
+			width: 100%;
+		}
+		#replaced-pageName .ne-form-type1 .btn-group {
+			float:right;
+		}
+		#replaced-pageName .ne-form-type2 .cell {
+			display: table-cell;
+			vertical-align: middle;
+		}
+		#replaced-pageName .ne-form-type2 dd > * {
+			display: block;
+		}
+		#replaced-pageName #add-input-dog .ne-form-type1 .list-name {
+			width: auto;
+		}
+		#replaced-pageName #add-input-dog .ne-form-type1 dd {
+			width: 261px;
+		}
+		#replaced-pageName #add-input-dog .ne-form-type1.kind .form-control {
+			float: right;
+			width: 175px;
+		}
+		#replaced-pageName #add-input-dog .ne-form-type1.kind .ne-bt4 {
+			float: left;
+			width: 80px;
+			height: 40px;
+			font-size: 14px;
+		}
+		#replaced-pageName .parsley-errors-list.filled {
+			margin: 3px 0 3px 132px;
+		}
+		#replaced-pageName .dlpo-product {
+			position: relative;
+		}
+		#replaced-pageName .dlpo-product .img-cont {
+			position: absolute;
+			top: 0;
+			left: 0;
+			
+		}
+	
+		/* IE8 */
+		.ie.ie8 #replaced-pageName #select-useCls {
+			width: 135px;
+		}
+		.ie.ie8 #replaced-pageName .btn-next-step {
+			min-width: auto;
+			min-height: auto;
+			width: 260px;
+			height: 50px;
+		}
+		.ie.ie8 #replaced-pageName .history {
+			min-width: auto;
+			width: 125px;
+		}
+	</style>
+	
+	<div class="page-content" id="{{ replaced-pageName }}">
+		<div class="row-px">
+	
+			<div class="col-px-708" id="dlpo">
+				<div class="dlpo-product" id="dlpo-product">
+					<div class="img-cont">
+						<img src="/ria/dlpo/pet/defaultPC.png?{version-hash}" alt="삼성화재 다이렉트 반려견보험
+							사랑하는 우리 강아지, 반려견보험으로 지켜주세요!
+							반려견의 의료비와 배상책임을 든든하게 보장
+							삼성화재 오프라인 대비 10% 인터넷 할인
+							다이렉트 10% 할인 : 인터넷으로 가입하면 삼성화재 오프라인 대비 보험료 10% 할인!
+							반려견 의료비 보장 : 반려견의 질병, 상해입원, 통원 의료비 보장
+							반려견 배상책임 보장 특약 : 반려견이 타인에게 손해를 입힌 경우, 법률상의 배상책임 보장"
+						/>
+					</div>
+				</div>
+				<div class="dlpo-product" id="dlpo-product-dog">
+					<div class="img-cont">
+						<img src="/ria/dlpo/pet/defaultPC_dog.png?{version-hash}" alt="삼성화재 다이렉트 반려견보험
+							사랑하는 우리 강아지, 반려견보험으로 지켜주세요!
+							반려견의 의료비와 배상책임을 든든하게 보장
+							삼성화재 오프라인 대비 10% 인터넷 할인
+							다이렉트 10% 할인 : 인터넷으로 가입하면 삼성화재 오프라인 대비 보험료 10% 할인!
+							반려견 의료비 보장 : 반려견의 질병, 상해입원, 통원 의료비 보장
+							반려견 배상책임 보장 특약 : 반려견이 타인에게 손해를 입힌 경우, 법률상의 배상책임 보장"
+						/>
+					</div>
+				</div>
+				<div class="dlpo-product" id="dlpo-product-cat">
+					<div class="img-cont">
+						<img src="/ria/dlpo/pet/defaultPC_cat.png?{version-hash}" alt="삼성화재 다이렉트 반려견보험
+							사랑하는 우리 강아지, 반려견보험으로 지켜주세요!
+							반려견의 의료비와 배상책임을 든든하게 보장
+							삼성화재 오프라인 대비 10% 인터넷 할인
+							다이렉트 10% 할인 : 인터넷으로 가입하면 삼성화재 오프라인 대비 보험료 10% 할인!
+							반려견 의료비 보장 : 반려견의 질병, 상해입원, 통원 의료비 보장
+							반려견 배상책임 보장 특약 : 반려견이 타인에게 손해를 입힌 경우, 법률상의 배상책임 보장"
+						/>
+					</div>>
+				</div>
+			</div>
+	
+			<div class="col-px-472">
+				<!-- step-container(s) -->
+				<div id="step-container">
+					<div class="step-track" id="step-track">
+	
+						<div class="step-slide" id="step00">
+							<div class="ne-section">
+								<h1 class="ne-titleH1">보험가입 형태를 선택해 주세요.</h1>
+	
+								<form id="prod-type-form" onsubmit="return false;">
+									<div class="btn-group-vertical" data-toggle="buttons" id="select-prod-type">
+										<div class="btn btn-radio-block box n1 type-dog">
+											<label for="rdo1-1">반려견</label>
+											<input type="radio" id="rdo1-1" name="radio-petCls" value="dog" required="">
+										</div>							
+										<div class="btn btn-radio-block box n2 type-cat">
+											<label for="rdo1-2">반려묘</label>
+											<input type="radio" id="rdo1-2" name="radio-petCls" value="cat">
+										</div>	
+									</div>									
+								</form>
+	
+								<div class="ne-bts-nextprev">
+									<button type="button" id="btn-recent" class="btn btn-prev-step history">최근 계산기록</button>
+									<button type="button" id="btn-next-step-type" class="btn btn-next-step float-right" log-id="btn-next" log-title="가입 형태를 선택해 주세요" log-entroll="false" data-step="0">가입 형태를 선택해 주세요</button>
+								</div>
+							</div>
+						</div>
+						<div class="step-slide" id="step01">
+							<div class="ne-section">
+								<h1 class="ne-titleH1"><span class="__change-type-text"></span>의 정보를 입력해 주세요.</h1>
+	
+								<form id="prod-info-form" onsubmit="return false;">
+									<div class="ne-line-box first">
+										<dl class="ne-form-type1" id="input-birth-container">
+											<dt class="list-name">
+												<label for="input-birth">생년월일</label>
+											</dt>
+											<dd>
+												<div class="form-group">
+													<input type="text" id="input-birth" class="form-control onlyNum" title="생년월일" placeholder="예 : 20180101"
+														required="" maxlength="8" autocomplete="off"
+														data-parsley-required-message="생년월일을 입력해 주세요"
+														data-parsley-minlength="8" 
+														data-parsley-minlength-message="생년월일을 정확히 입력해 주세요"
+														data-parsley-pattern="/^(19|20)\d{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[0-1])$/" data-parsley-pattern-message="생년월일을 정확히 입력해 주세요"		
+														data-parsley-errors-container="#input-birth-validate"
+													>
+												</div>
+											</dd>
+										</dl>
+										<div class="target-validate" id="input-birth-validate"></div>
+	
+										<dl class="ne-form-type2 add-input" id="add-input-dog">
+											<div class="bullet-arrow02">예방접종 시 등록한 <span class="__change-type-text"></span>의 실제 생년월일을 입력해 주세요.</div>
+											<dl class="ne-form-type1 kind">
+												<dt class="list-name">
+													<label for="kind"><span class="__change-type-text"></span>의 종류</label>
+												</dt>
+												<dd>
+													<button type="button" class="ne-bt4" id="btn-search-pet">종류 찾기</button>
+													<input type="text" class="form-control" id="kind-pet" 
+														required="" autocomplete="off"
+														data-parsley-required-message="반려견의 종류를 선택해 주세요."
+														data-parsley-errors-container="#ne-bt4-validate"
+													>
+												</dd>
+											</dl>
+										</dl>
+										<div class="target-validate" id="ne-bt4-validate"></div>
+									</div>
+								</form>
+	
+								<div class="ne-bts-nextprev">
+									<button type="button" id="btn-prev-step" class="btn btn-prev-step history">이전</button>
+									<button type="button" id="btn-next-step-info" class="btn btn-next-step float-right" log-id="btn-next" log-title="보험료 계산하기" log-entroll="false" data-step="1">보험료 계산하기</button>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+	
+				</div>
+				<!-- step-container(e) -->
+	
+				<!-- info-container(s) -->
+				<div class="info-container">
+					<div class="ne-section box">
+						<div class="ne-line-box" id="notice-container">
+							<div class="bullet-arrow02">만 8세까지 가입이 가능합니다.</div>
+							<div class="bullet-arrow02">과거 상해와 질병 이력이 있는 경우, 가입이 제한될 수 있습니다.</div>
+							<div class="bullet-arrow02 btn-caution cursor-pointer">보험가입 시 알아두실 사항을 확인해 주세요.<span class="sfd-icon-right-circle sfcolor-blue-03"></span></div>
+							<div class="bullet-arrow02">반려동물의 종류와 연령에 따라 보장 가입이 제한될 수 있습니다.</div>
+						</div>
+						<div class="ne-box">
+							<button type="button" id="btn-info" class="ne-bt3">
+								삼성화재 다이렉트 펫보험 안내
+							</button>
+							<button type="button" id="btn-compliance" class="ne-bt3">
+								보험금 청구 안내
+							</button>
+						</div>
+					</div>
+				</div>
+				<!-- info-container(e) -->
+			</div>
+	
+		</div>
+	</div>

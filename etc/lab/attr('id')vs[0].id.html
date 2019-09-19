@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>
+            var numberOfTests = 1000000;
+            var div;
+
+            $(document).ready(function(){
+                $('#test-attr').click(testAttr);
+                $('#test-convert').click(testConvert);
+                $('#test-get').click(testGet);
+                $('#test-get-attribute').click(testGetAttribute);
+                div = $('div');
+            });
+
+            function testAttr() {
+                console.time('div.attr(\'id\')');
+                for (var i = 0; i < numberOfTests; i++) {
+                    var id = div.attr('id');
+                }
+                console.timeEnd('div.attr(\'id\')');
+            }
+            function testConvert() {
+                console.time('div[0].id');
+                for (var i = 0; i < numberOfTests; i++) {
+                    var id = div[0].id;
+                }
+                console.timeEnd('div[0].id')
+            }
+            function testGet() {
+                console.time('div.get(0).id');
+                for (var i = 0; i < numberOfTests; i++) {
+                    var id = div.get(0).id;
+                }
+                console.timeEnd('div.get(0).id')
+            }
+            function testGetAttribute() {
+                console.time('div[0].getAttribute(\'id\')');
+                for (var i = 0; i < numberOfTests; i++) {
+                    var id = div[0].getAttribute('id');
+                }
+                console.timeEnd('div[0].getAttribute(\'id\')')
+            }
+
+            /**
+             *  $(element)[0].id jQuery 객체의 ID를 얻는 가장 효율적인 방법입니다.
+             * /
+        </script>
+    </head>
+    <body>
+        <button id="test-attr">Test $.attr('id')</button>
+        <button id="test-convert">Test $[0].id</button>
+        <button id="test-get">Test $.get(0).id</button>
+        <button id="test-get-attribute">Test $[0].getAttribute('id')</button>
+        <div></div>
+    </body>
+</html>

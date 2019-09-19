@@ -1,0 +1,48 @@
+
+*** URL
+http://localhost:3333/ria/pc/product/car/?state=Front
+
+
+*** 폴더경로
+/Users/Ina/Desktop/00_work/01_web/ria/
+
+* server
+http://localhost:3333/ria/pc/product/travel/index.html (edited)
+
+터미널에서 로컬 서버 가동시킬때
+cd [대리님 server폴더 경로]
+node dummy.server.js -port 3333 -riaPath "[ria 폴더 경로]"
+이렇게 입력해주시면 됩니당
+예시)
+cd Sites/web/ria/server 
+node dummy.server.js -port 3333 -riaPath "/Users/leekanghun/Sites/web"
+
+
+cd Desktop/00_work/01_web/ria/server
+node dummy.server.js -port 3333 -riaPath "/Users/Ina/Desktop/00_work/01_web"
+
+* sass
+cd /Users/Ina/Desktop/00_work/01_web/ria/pc/product/common/sass
+
+--------------------------------------------------------------------------
+*** 작업파일 전송순서
+- git
+1. tower 키고 Working Copy 클릭
+2. Pull 버튼 클릭 -> 파일 최신 업데이트
+3. Working Copy에서 작업파일 status 클릭 -> Commit Subject에 작업내역 적고 Commit 버튼 클릭.
+
+- ftp 통테/개발서버 올리기
+1. 오) 에스프레소 파일 실행 -> pack버튼 클릭 -> 파일생성
+2. 왼) 자료전송 프로그램(업무망) 프로그램 실행, Get Up 프로그램 실행, ftp실행 -> ftp접속
+3. 오) crossAgent 프로그램 실행 -> 로그인(비번영문 확인) -> 자료전송
+4. 왼) ftp에서 잘 전송되었는지 확인.
+
+
+--------------------------------------------------------------------------
+
+* git 
+ria_common	http://42.243.134.44:3000/sfd/ria_common.git	공통
+ria_pc	        http://42.243.134.44:3000/sfd/ria_pc.git	PC
+ria_mobile	http://42.243.134.44:3000/sfd/ria_mobile.git	Mobile
+ria_server	http://42.243.134.44:3000/sfd/ria_server.git
+
