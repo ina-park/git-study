@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll_parallax_04</title>
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->	
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=1920, user-scalable=no, shrink-to-fit=no">
+	
+	<!-- STYLESHEETS(s) -->
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font.css">
+	<link rel="stylesheet" type="text/css" href="../../css/slick.css">
+	<link rel="stylesheet" type="text/css" href="../../css/animate.css">
+	<!-- STYLESHEETS(e) -->	
+
+	<!-- SCRIPTS(s) -->
+	<script src="../../js/jquery-3.3.1.min.js"></script>
+	<script src="../../js/jquery.easing.1.3.js"></script>
+	<script src="../../js/jquery.mousewheel.js"></script>
+	<script src="../../js/jquery-ui.js"></script>
+	<script src="../../js/slick.js"></script>
+	<script src="../../js/TweenMax.min.js"></script>
+	<script src="../../js/TimelineMax.min.js"></script>
+	<!-- SCRIPTS(e) -->		
+	
+	<style type="text/css">
+
+		.section {margin:150px 0;zoom:1;display:block;text-align:center;opacity:0;}
+		.section .img-cont {position:relative;overflow:hidden;width:50%;height:400px;margin:0 auto;background:yellow}
+		.section .img-cont img {display:block;position:absolute;top:50%;left:0;margin-top:-15vw;width:100%;height:auto;}
+
+		.box  {height:2000px;background:gray;}
+
+
+		.section .text-cont {position:absolute;right:-35%;left:0;bottom:-18%;
+			margin-left:auto;margin-right:auto;
+		}
+
+		.section .text-cont .pos {
+			position: absolute;
+			width: 500px;
+			height: 150px;
+			bottom: 10%;
+			right: 42%;
+		}
+
+		.section .text-cont .text {
+			position:absolute;
+			top:0;
+			right:0;
+
+			font-size:110px;
+			font-weight:bold;
+			
+
+		}
+
+		.section .text-cont .text01 {
+			-moz-text-fill-color: transparent;
+			-webkit-text-fill-color: transparent;
+			-moz-text-stroke-color: green;
+			-webkit-text-stroke-color: green;
+			-moz-text-stroke-width: 2px;
+			-webkit-text-stroke-width: 2px;
+			/* top: -1px;
+			left: 30px; */
+			opacity: .9;
+			z-index: 999;
+		}
+		.section .text-cont .text02 {
+			color:green;
+			opacity: .3;
+		}
+
+
+
+
+		@keyframes fadeUp {
+			0% {transform:translate(0,100px);opacity:0;}
+			100% {transform:translate(0,0);opacity:1;}
+		}
+
+		.section.active {animation:fadeUp 2s alternate both;}
+
+
+
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			var $targetImg = $('.img-cont img');
+			var $targetText01 = $('.text-cont .text01');
+			var $targetText02 = $('.text-cont .text02');
+			var i = 0;
+			var scrollPos = new Array;
+
+			$('#section01').addClass('active');
+
+			$('section').each(function(){
+
+				scrollPos[i] = $(this).offset().top - 400;
+				i++;
+			});
+
+
+			var nLastScrollTop = 0;
+
+			$(window).on('scroll', function(e) {
+				var $scrollTop = $(window).scrollTop();
+				// console.log('$tagetOffsetTop ::', $tagetOffsetTop);
+
+				// console.log('$target ::', $target);
+				// console.log('$scrollTop ::', $scrollTop);
+				
+				for(var i=0; i < scrollPos.length; i++) {
+					if ($scrollTop > scrollPos[i]) {
+						$('section').eq(i).addClass('active');
+					}
+				}
+
+				if ($scrollTop > nLastScrollTop) {
+					console.log('down')
+
+					TweenMax.to($targetImg, 3, {
+						y: -50,
+						ease: Power4.easeOut
+					});
+					TweenMax.to($targetText01, 3, {
+
+						y: 5,
+						ease: Power3.easeOut
+					});
+					TweenMax.to($targetText02, 5, {
+						y: 15,
+						ease: Power3.easeOut
+					});						
+				} else {
+					console.log('up')
+
+					TweenMax.to($targetImg, 3, {
+						y: 50,
+						ease: Power4.easeOut
+					});
+					TweenMax.to($targetText01, 3, {
+
+						y: -5,
+						ease: Power3.easeOut
+					});
+					TweenMax.to($targetText02, 5, {
+						y: -15,
+						ease: Power3.easeOut
+					});					
+				}
+
+				// console.log('nLastScrollTop1 ::', nLastScrollTop);
+
+				nLastScrollTop = $scrollTop;
+
+				// console.log('nLastScrollTop2 ::', nLastScrollTop);
+
+
+				// var nDelta = e.originalEvent.wheelDelta / 30 || -e.originalEvent.detail;
+				// if (nDelta < -1) {
+				// 	TweenMax.to($targetImg, 3, {
+				// 		y: -50,
+				// 		ease: Power4.easeOut
+				// 	});
+				// 	TweenMax.to($targetText01, 3, {
+
+				// 		y: 5,
+				// 		ease: Power3.easeOut
+				// 	});
+				// 	TweenMax.to($targetText02, 5, {
+				// 		y: 15,
+				// 		ease: Power3.easeOut
+				// 	});					
+
+				// } else if (nDelta > 1) {
+				// 	TweenMax.to($targetImg, 3, {
+				// 		y: 50,
+				// 		ease: Power4.easeOut
+				// 	});
+				// 	TweenMax.to($targetText01, 3, {
+
+				// 		y: -5,
+				// 		ease: Power3.easeOut
+				// 	});
+				// 	TweenMax.to($targetText02, 5, {
+				// 		y: -15,
+				// 		ease: Power3.easeOut
+				// 	});								
+				// }
+
+			})
+
+		});
+
+
+	</script>
+	
+</head>
+<body>
+	<!-- wrap(s) -->
+	<div id="wrap" class="wrap wrap-main">	
+		
+		<section class="section section01 " id="section01">
+			<div class="img-cont">
+				<img class="img-cont-img" src="https://www.childfund.or.kr/STH2/upload/file/siteManage/2019/3/7/UAAMcMUIEE_20190307091414943.jpg" alt="image" />
+			</div>
+			<div class="text-cont">
+				<div class="pos">
+					<span class="text text01">Childfund</span>
+					<span class="text text02">Childfund</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="section section02" id="section02">
+			<div class="img-cont">
+				<img class="img-cont-img" src="https://www.childfund.or.kr/STH2/upload/file/siteManage/2019/3/7/UAAMcMUIEE_20190307091414943.jpg" alt="image" />
+			</div>
+		</section>
+		
+		<section class="section section03" id="section03">
+			<div class="img-cont">
+				<img class="img-cont-img" src="https://www.childfund.or.kr/STH2/upload/file/siteManage/2019/3/7/UAAMcMUIEE_20190307091414943.jpg" alt="image" />
+			</div>
+		</section>	
+			
+		<section class="section section04" id="section04">
+			<div class="img-cont">
+				<img class="img-cont-img" src="https://www.childfund.or.kr/STH2/upload/file/siteManage/2019/3/7/UAAMcMUIEE_20190307091414943.jpg" alt="image" />
+			</div>
+		</section>
+		
+		<section class="section section05" id="section05">
+			<div class="img-cont">
+				<img class="img-cont-img" src="https://www.childfund.or.kr/STH2/upload/file/siteManage/2019/3/7/UAAMcMUIEE_20190307091414943.jpg" alt="image" />	
+			</div>		
+		</section>
+
+
+	</div>
+	<!-- wrap(e) -->	
+</body>
+</html>
