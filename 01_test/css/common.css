@@ -7,7 +7,7 @@
 *:focus {outline:none;}
 
 html {-webkit-overflow-scrolling:touch;-webkit-box-sizing:border-box;box-sizing:border-box;-ms-overflow-x:hidden;overflow-x:hidden;}
-body {font-family:'notokr', 'audi', sans-serif;font-size:14px;color:#222;letter-spacing:.5px;-ms-overflow-style:scrollbar;-webkit-font-smoothing:antialiased;background-color:#fff;}
+body {font-family: 'NanumBarunGothic', 'CircularStd-Book', 'SpoqaHanSans-Regular', sans-serif;font-size:14px;color:#222;letter-spacing:.5px;-ms-overflow-style:scrollbar;-webkit-font-smoothing:antialiased;background-color:#fff;}
 
 button {text-align:center;cursor:pointer;border:none;margin:0;padding:0;overflow:visible;background:transparent;line-height:normal;-webkit-font-smoothing:inherit;-moz-osx-font-smoothing:inherit;-webkit-appearance:none;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 /* Remove excess padding and border in Firefox 4+ */

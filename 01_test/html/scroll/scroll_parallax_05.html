@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>scroll_parallax_05</title>
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->	
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+	<meta name="viewport" content="width=1920, user-scalable=no, shrink-to-fit=no">
+	
+	<!-- STYLESHEETS(s) -->
+	<link rel="stylesheet" type="text/css" href="../../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../../css/font.css">
+	<link rel="stylesheet" type="text/css" href="../../css/slick.css">
+	<link rel="stylesheet" type="text/css" href="../../css/animate.css">
+	<!-- STYLESHEETS(e) -->	
+
+	<!-- SCRIPTS(s) -->
+	<script src="../../js/jquery-3.3.1.min.js"></script>
+	<script src="../../js/jquery.easing.1.3.js"></script>
+	<script src="../../js/jquery.mousewheel.js"></script>
+	<script src="../../js/jquery-ui.js"></script>
+	<script src="../../js/slick.js"></script>
+	<script src="../../js/TweenMax.min.js"></script>
+	<script src="../../js/TimelineMax.min.js"></script>
+	<!-- SCRIPTS(e) -->		
+	
+	<style type="text/css">
+
+		
+
+		#document {
+			background-color:rgb(24,36,36);
+			transition: background .3s;
+			-webkit-transition: background .3s;
+			-ms-transition: background .3s;
+
+			position:relative;
+			width:100%;
+			height:auto;
+			left:0;
+			top:0;
+			z-index:1;
+
+		}
+		#document:before {
+			content:'';
+			display:block;
+			overflow:hidden;
+		}
+
+
+
+		.max-width {max-width:1600px;width:100%;margin:0 auto;}
+		.max-width .content {padding-top: 333px;}
+
+
+		.projects-view {position:relative;}
+
+		.o-smart-area {
+			opacity:0;
+			transform:translate(0px, 120px);
+			-ms-transform:translate(0px, 120px);
+			transition:opacity 1.5s, transform 1.5s;
+			-ms-transition:opacity 1.5s, transform 1.5s; 
+		}
+
+
+
+
+		.loaded .projects-view.on .o-smart-area.hello {
+			opacity:1;
+			transform:translate(0px, 0px);
+			-ms-transform:translate(0px, 0px);
+		}
+		.loaded .projects-view .o-smart-area.hello {
+			opacity:0;
+			transform:translate(0px, 120px);
+			-ms-transform:translate(0px, 120px);
+		}
+
+
+		.projects-view > .group {
+			position:absolute;
+			z-index:5;
+			top:-72px;
+			left:19.8%;
+
+			color: #fff;
+			
+			text-transform: uppercase;
+		}
+		.projects-view.on > .group.o-smart-area {
+			transition-delay:.15s;
+		}
+
+		.projects-view.on > h1.o-smart-area {
+			transition-delay: .3s;
+		}
+
+		.projects-view > h1 {
+			font-size:56px;
+			line-height:1.56;
+			font-weight:700;
+			letter-spacing: -1px;
+
+
+			position:absolute;
+			z-index:5;
+			top:-45px;
+			left:19.12%;
+			white-space:normal;
+			color:#fff;
+		}
+
+		.projects-view h1 .x-stroke {
+			color:transparent;
+			-webkit-text-stroke:2px #fff;
+		}
+
+		.projects-view > .x-keyvisual {
+			width:88.21%;
+			margin:0 0 0 auto;
+		}
+		.projects-view > section {
+			position:relative;
+			height:auto;
+			float:none;
+			clear:both;
+		}
+
+		.foreground .inr-wrap {
+			position:relative;
+			width:100%;
+			height:auto;
+		}
+
+		.projects-view > .x-keyvisual h2 {display:none;}
+
+		.keyvisual-img .o-hangon {
+			position:relative;
+			padding-top:62.5%;
+		}
+
+		.o-hangon {
+			transition:0;
+			-ms-transition:0;
+			will-change:transform;
+		}
+
+		.projects-view .keyvisual-img .o-hangon .o-img {width:0;}
+
+		.projects-view.on .keyvisual-img .o-hangon .o-img {
+			width:100%;
+			transition: width 1.5s cubic-bezier(0.000, 0.000, 0.180, 1.055);
+			-ms-transition: width 1.5s cubic-bezier(0.000, 0.000, 0.180, 1.055);
+			-webkit-transition: width 1.5s cubic-bezier(0.000, 0.000, 0.180, 1.055);
+
+			transition-delay:.45s;
+		}
+		.keyvisual-img .o-hangon .o-img {
+			position:absolute;
+			top:0;
+			right:0;
+			height:100%;
+		}
+		.o-hangon * {
+			transform:translate3d(0,0,0) !important;
+		}
+		.o-img {overflow:hidden;}
+
+		.projects-view.on .keyvisual-img .o-hangon .o-img iframe,
+		.projects-view.on .keyvisual-img .o-hangon .o-img img {
+			position:absolute;
+			top:0;
+			right:-1px;
+			left:auto;
+			width:auto;
+			height:100% !important;
+		}
+
+		.projects-view > .x-one > .foreground {padding:0;}
+		.projects-view > .x-one > .media {
+			position:relative;
+			width:100%;
+			height:auto;
+		}
+		.projects-view > .x-one > .media figure {overflow:visible;}
+		figure > .images {width:100%;height:auto;overflow:hidden;}
+
+		.projects-view > .x-one .media .o-img {position:relative;z-index:1;transform:none !important;}
+
+		.projects-view > .x-one .media .o-img > img {
+			position:relative;
+			z-index:1;
+			background-size:100% auto;
+			background-repeat:no-repeat;
+			background-position:0 0;
+			visibility:hidden;
+			opacity:0;
+			transform-origin:50% 50%;
+
+			
+		}
+
+
+	</style>
+
+	<script type="text/javascript">
+
+		$(document).ready(function(){	// 모든 그래픽이 아직 로드되지 않은 경우에도 HTML문서가 로드되고 DOM이 준비되면 준비 이벤트 시작됨
+			
+			var i = 0;
+			var scrollPos = [];
+
+			$('section').each(function(){
+				scrollPos[i] = $(this).offset().top - 400;
+				i++;
+			});
+
+			$(window).on('scroll', function(e) {
+				var $scrollTop = $(window).scrollTop();
+
+				for(var i=0; i < scrollPos.length; i++) {
+					if ($scrollTop > scrollPos[i]) {
+						$('section').eq(i).addClass('hello');
+					}
+				}
+
+
+			})
+		});
+
+		$(window).on('load', function(){	// 모든 프레임, 객체 및 이미지를 포함하여 전체 페이지가 완전히 로드되면 창 로드 이벤트가 약간 나중에 발생
+			$('html').addClass('loaded');
+			//setTimeout(function(){
+				$('.projects-view').addClass('on');
+			//}, 1000)
+			
+		});
+
+
+	</script>
+	
+</head>
+<body>
+	<div id="document">
+	
+		<!-- wrap(s) -->
+		<div id="wrap" class="wrap wrap-main">
+			<h1 class="hellow"></h1>
+			<div class="max-width">
+				<div class="content">
+
+					<article class="projects-view">
+						<span class="group o-smart-area hello" tabindex="">초록우산 어린이재단 UN아동권리협약 채택 30주년 기념 캠페인</span>
+						<h1 class="o-smart-area hello">
+							초록별 행복한 어린왕자 이야기<br>
+							<span class="x-stroke">행복한 어린왕자 이야기</span>
+						</h1>
+
+						<section class="x-keyvisual">
+							<div class="foreground">
+								<div class="inr-wrap">
+									<h2>Campaign Summary</h2>
+									<div class="keyvisual-img o-smart-area hello">
+										<figure class="o-hangon">
+											<div class="o-img video loaded">
+												<img src="https://www.childfund.or.kr/STH2/upload/file/fileDownLink/2019/10/30/camp_story_thumb01.jpg" 
+												data-src="" data-width="" data-height="" data-bgcolor="" alt="" tabindex="" style="">												
+												<!-- <iframe src="https://www.youtube.com/embed/yZEIAYzdVXw?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0&autohide=1&hd=1&wmode=opaque" 
+												title="초록별 행복한 어린왕자 영상" frameborder="0" allowfullscreen="1"></iframe> -->
+											</div>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section class="x-one o-full o-smart-area">
+							<div class="foreground">
+								<div class="inr-wrap">
+									<div class="media">
+										<figure>
+											<div class="images">
+												<img src="https://www.childfund.or.kr/STH2/upload/file/fileDownLink/2019/10/30/camp_story_thumb01.jpg" 
+												data-src="" data-width="" data-height="" data-bgcolor="" alt="" tabindex="" style="">
+											</div>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section class="x-one o-full o-smart-area">
+							<div class="foreground">
+								<div class="inr-wrap">
+									<div class="media">
+										<figure>
+											<div class="images">
+												<img src="https://www.childfund.or.kr/STH2/upload/file/fileDownLink/2019/10/30/camp_story_thumb01.jpg" 
+												data-src="" data-width="" data-height="" data-bgcolor="" alt="" tabindex="" style="">
+											</div>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</section>					
+
+						<section class="x-one o-full o-smart-area">
+							<div class="foreground">
+								<div class="inr-wrap">
+									<div class="media">
+										<figure>
+											<div class="images">
+												<img src="https://www.childfund.or.kr/STH2/upload/file/fileDownLink/2019/10/30/camp_story_thumb01.jpg" 
+												data-src="" data-width="" data-height="" data-bgcolor="" alt="" tabindex="" style="">
+											</div>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section class="x-one o-full o-smart-area">
+							<div class="foreground">
+								<div class="inr-wrap">
+									<div class="media">
+										<figure>
+											<div class="images">
+												<img src="https://www.childfund.or.kr/STH2/upload/file/fileDownLink/2019/10/30/camp_story_thumb01.jpg" 
+												data-src="" data-width="" data-height="" data-bgcolor="" alt="" tabindex="" style="">
+											</div>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</section>	
+						
+						<section class="x-one o-full o-smart-area">
+							<div class="foreground">
+								<div class="inr-wrap">
+									<div class="media">
+										<figure>
+											<div class="images">
+												<img src="https://www.childfund.or.kr/STH2/upload/file/fileDownLink/2019/10/30/camp_story_thumb01.jpg" 
+												data-src="" data-width="" data-height="" data-bgcolor="" alt="" tabindex="" style="">
+											</div>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</section>					
+						
+						<section class="x-one o-full o-smart-area">
+							<div class="foreground">
+								<div class="inr-wrap">
+									<div class="media">
+										<figure>
+											<div class="images">
+												<img src="https://www.childfund.or.kr/STH2/upload/file/fileDownLink/2019/10/30/camp_story_thumb01.jpg" 
+												data-src="" data-width="" data-height="" data-bgcolor="" alt="" tabindex="" style="">
+											</div>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<section class="x-one o-full o-smart-area">
+							<div class="foreground">
+								<div class="inr-wrap">
+									<div class="media">
+										<figure>
+											<div class="images">
+												<img src="https://www.childfund.or.kr/STH2/upload/file/fileDownLink/2019/10/30/camp_story_thumb01.jpg" 
+												data-src="" data-width="" data-height="" data-bgcolor="" alt="" tabindex="" style="">
+											</div>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</section>	
+						
+						<section class="x-one o-full o-smart-area">
+							<div class="foreground">
+								<div class="inr-wrap">
+									<div class="media">
+										<figure>
+											<div class="images">
+												<img src="https://www.childfund.or.kr/STH2/upload/file/fileDownLink/2019/10/30/camp_story_thumb01.jpg" 
+												data-src="" data-width="" data-height="" data-bgcolor="" alt="" tabindex="" style="">
+											</div>
+										</figure>
+									</div>
+								</div>
+							</div>
+						</section>
+
+					</article>
+
+				</div>
+			</div>
+		</div>
+		<!-- wrap(e) -->	
+
+	</div>
+</body>
+</html>
